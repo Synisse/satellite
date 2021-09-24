@@ -76,19 +76,19 @@ function Sattelite(props: JSX.IntrinsicElements['mesh']) {
     return (
       <>
         <mesh name="bottom" position={[0, -0.85, 0]} castShadow receiveShadow>
-          <cylinderGeometry args={[0.4, 0.4, 0.7, 8, 1, true, 0, Math.PI / 3]} />
+          <cylinderGeometry args={[0.3, 0.4, 0.7, 8, 1, true, 0, Math.PI / 3]} />
           <meshPhongMaterial color={Colors.gold} side={DoubleSide} shininess={45} />
         </mesh>
         <mesh name="bottom" position={[0, -0.85, 0]} castShadow receiveShadow>
-          <cylinderGeometry args={[0.4, 0.4, 0.7, 8, 1, true, Math.PI / 3, Math.PI / 1.5]} />
+          <cylinderGeometry args={[0.3, 0.4, 0.7, 8, 1, true, Math.PI / 3, Math.PI / 1.5]} />
           <meshPhongMaterial color={Colors.metal} side={DoubleSide} shininess={45} />
         </mesh>
         <mesh name="bottom" position={[0, -0.85, 0]} castShadow receiveShadow>
-          <cylinderGeometry args={[0.4, 0.4, 0.7, 8, 1, true, Math.PI / 3 + Math.PI / 1.5, Math.PI / 3]} />
+          <cylinderGeometry args={[0.3, 0.4, 0.7, 8, 1, true, Math.PI / 3 + Math.PI / 1.5, Math.PI / 3]} />
           <meshPhongMaterial color={Colors.gold} side={DoubleSide} shininess={45} />
         </mesh>
         <mesh name="bottom" position={[0, -0.85, 0]} castShadow receiveShadow>
-          <cylinderGeometry args={[0.4, 0.4, 0.7, 8, 1, true, (Math.PI / 3) * 2 + Math.PI / 1.5, Math.PI / 1.5]} />
+          <cylinderGeometry args={[0.3, 0.4, 0.7, 8, 1, true, (Math.PI / 3) * 2 + Math.PI / 1.5, Math.PI / 1.5]} />
           <meshPhongMaterial color={Colors.metal} side={DoubleSide} shininess={45} />
         </mesh>
       </>
