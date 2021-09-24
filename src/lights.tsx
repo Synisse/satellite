@@ -1,4 +1,4 @@
-import {Box, Sphere, useHelper} from '@react-three/drei';
+import {Sphere, useHelper} from '@react-three/drei';
 import {useRef} from 'react';
 import {DirectionalLightHelper, PointLightHelper} from 'three';
 import './App.css';
@@ -32,7 +32,7 @@ function Lights() {
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-      <Sphere name="sun" position={[10, 10, 2]}>
+      <Sphere name="sun" position={[10, 10, 2]} args={[2, 8, 8]}>
           <meshStandardMaterial attach="material" color={Colors.sun} />
       </Sphere>
     </>
