@@ -1,5 +1,7 @@
+import {Box, Cylinder} from '@react-three/drei';
 import {DoubleSide} from 'three';
 import {Colors} from './helpers/colors';
+import {Materials} from './helpers/materials';
 
 function Sattelite(props: JSX.IntrinsicElements['mesh']) {
   const {position} = props;
@@ -32,7 +34,42 @@ function Sattelite(props: JSX.IntrinsicElements['mesh']) {
   }
 
   function renderFlaps(): React.ReactElement {
-    return <></>;
+    return (
+      <>
+        <Cylinder
+          name="pipe-flap-left"
+          position={[0.6, 0.1, 0]}
+          rotation={[0, 0, Math.PI / 2]}
+          castShadow
+          receiveShadow
+          args={[0.04, 0.04, 0.4, 8, 1, true]}
+        >
+          <meshStandardMaterial color={Colors.metal} side={DoubleSide} />
+        </Cylinder>
+        <Cylinder
+          name="pipe-flap-right"
+          position={[-0.6, 0.1, 0]}
+          rotation={[0, 0, Math.PI / 2]}
+          castShadow
+          receiveShadow
+          args={[0.04, 0.04, 0.4, 8, 1, true]}
+        >
+          <meshStandardMaterial color={Colors.metal} side={DoubleSide} />
+        </Cylinder>
+        <Box name="flap-left" castShadow receiveShadow position={[-1.5, 0.1, 0]} rotation={[-Math.PI/8, 0, 0]} args={[1.5, 0.75, 0.1]}>
+            <meshPhongMaterial {...Materials.flapMaterial} />
+        </Box>
+        <Box name="flap-right" castShadow receiveShadow position={[1.5, 0.1, 0]} rotation={[-Math.PI/8, 0, 0]} args={[1.5, 0.75, 0.1]}>
+            <meshPhongMaterial {...Materials.flapMaterial} />
+        </Box>
+        <Box name="flap-left-mini" castShadow receiveShadow position={[-0.65, 0.1, 0]} rotation={[-Math.PI/8, 0, 0]} args={[0.1, 0.4, 0.1]}>
+            <meshStandardMaterial color={Colors.metal} />
+        </Box>
+        <Box name="flap-right-mini" castShadow receiveShadow position={[0.65, 0.1, 0]} rotation={[-Math.PI/8, 0, 0]} args={[0.1, 0.4, 0.1]}>
+            <meshStandardMaterial color={Colors.metal} />
+        </Box>
+      </>
+    );
   }
 
   function renderBottomTube(): React.ReactElement {
@@ -67,6 +104,7 @@ function Sattelite(props: JSX.IntrinsicElements['mesh']) {
 
       {renderPipes()}
       {renderBottomTube()}
+      {renderFlaps()}
     </group>
   );
 }
