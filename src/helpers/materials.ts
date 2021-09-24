@@ -8,4 +8,10 @@ export const Materials = {
     specular: Colors.sun,
     shininess: 60,
   }),
+  innerPipeMaterial: new THREE.MeshPhongMaterial({
+    color: Colors.metal,
+    emissive: Colors.black,
+    specular: Colors.sun,
+    shininess: 60,
+  }),
 };
