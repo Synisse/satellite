@@ -1,15 +1,9 @@
-import React, {useMemo, useRef} from 'react';
+import {useMemo, useRef} from 'react';
 import {extend, useFrame} from '@react-three/fiber';
-import {Colors} from './helpers/colors';
 import {DotMaterial} from './Dotmaterial';
 
 const ROW = 50;
 const COL = 50;
-const NUM = ROW * COL;
-const pointCount = 50;
-
-const RADIUS = 5;
-const MAX_PARTICLES = 100;
 
 extend({DotMaterial});
 
@@ -27,12 +21,6 @@ export function Thrusters() {
         i++;
       }
     }
-    // for (let i = 0; i < MAX_PARTICLES; i++) {
-    //     initialCoords.push(0);
-    //     initialCoords.push(2);
-    //     initialCoords.push(0);
-    //     initialSizes.push(Math.random() < 0.03 ? 15 : 6);
-    // }
 
     const coords = new Float32Array(initialCoords);
     const sizes = new Float32Array(initialSizes);
