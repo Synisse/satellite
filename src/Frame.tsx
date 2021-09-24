@@ -1,5 +1,5 @@
 import {Stars} from '@react-three/drei';
-import {Canvas, extend, useThree} from '@react-three/fiber';
+import {Canvas, extend} from '@react-three/fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import Box from './Box';
 import CameraControls from './CameraControls';

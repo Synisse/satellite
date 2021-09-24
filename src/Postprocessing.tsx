@@ -58,9 +58,9 @@ function Post() {
     composer.addPass(normalPass);
     composer.addPass(effectPass);
     return composer;
-  }, []);
+  }, [gl, camera, scene]);
 
-  useEffect(() => void composer.setSize(size.width, size.height), [size]);
+  useEffect(() => void composer.setSize(size.width, size.height), [size, composer]);
   return useFrame((_, delta) => {
     gl.autoClear = false;
 
