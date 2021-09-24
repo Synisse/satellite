@@ -11,11 +11,12 @@ extend({OrbitControls});
 function Frame() {
   return (
     <Canvas data-testid="mainframe" shadows={true} onCreated={(state) => state.gl.setClearColor('black')}>
+      <fog attach="fog" args={['white', 0, 400]} />
       <CameraControls />
       <Lights />
       <Box position={[-3, 0, 0]} castShadow={true} receiveShadow={true} />
       <Box position={[3, 0, 0]} castShadow={true} receiveShadow={true} />
-      <Sattelite position={[0, 1, 0]}/>
+      <Sattelite position={[0, 1, 0]} />
       <Ground position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]} castShadow={true} receiveShadow={true} />
     </Canvas>
   );
