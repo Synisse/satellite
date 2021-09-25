@@ -3,6 +3,7 @@ import React from 'react';
 import {DoubleSide} from 'three';
 import {Colors} from './helpers/colors';
 import {Materials} from './helpers/materials';
+import Thruster from './Thruster';
 
 function Sattelite(props: JSX.IntrinsicElements['mesh']) {
   const {position} = props;
@@ -235,6 +236,7 @@ function Sattelite(props: JSX.IntrinsicElements['mesh']) {
       {renderFlaps()}
       {renderFrontRotationThrusters()}
       {renderBackRotationThrusters()}
+      <Thruster />
     </group>
   );
 }

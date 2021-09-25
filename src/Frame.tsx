@@ -24,7 +24,7 @@ function Frame() {
       <Box position={[3, 0, 0]} castShadow={true} receiveShadow={true} /> */}
       <Sattelite position={[0, 1, 0]} />
       <Ground position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]} castShadow={true} receiveShadow={true} />
-      <Thrusters />
+      {/* <Thrusters /> */}
     </Canvas>
   );
 }
