@@ -1,4 +1,4 @@
-import {Stars} from '@react-three/drei';
+import {Stars, Stats} from '@react-three/drei';
 import {Canvas, extend} from '@react-three/fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import Box from './Box';
@@ -16,6 +16,7 @@ function Frame() {
     <Canvas data-testid="mainframe" shadows={true} onCreated={(state) => state.gl.setClearColor('black')}>
       <fog attach="fog" args={['white', 0, 400]} />
       <Postprocessing />
+      <Stats />
       <CameraControls />
       <Stars />
       <Lights />
