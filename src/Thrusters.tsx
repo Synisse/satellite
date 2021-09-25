@@ -29,7 +29,6 @@ export function Thrusters() {
 
   const geom = useRef();
   useFrame((state) => {
-    console.log('geom: ', geom);
     //@ts-ignore
     geom.current.material.uniforms.time.value = state.clock.getElapsedTime();
     //@ts-ignore
