@@ -1,8 +1,9 @@
 import {Box, Cylinder} from '@react-three/drei';
 import React from 'react';
-import {DoubleSide} from 'three';
+import {DoubleSide, Vector3} from 'three';
 import {Colors} from './helpers/colors';
 import {Materials} from './helpers/materials';
+import ThrusterEffect from './particleeffects/ThrusterEffect';
 import Thruster from './Thruster';
 
 function Sattelite(props: JSX.IntrinsicElements['mesh']) {
@@ -224,6 +225,18 @@ function Sattelite(props: JSX.IntrinsicElements['mesh']) {
     );
   }
 
+  function renderThrusterAnimation(): React.ReactElement {
+    return (
+      <group position={[0.375, -0.95, 0.2]} rotation={[0, Math.PI / 1.35, 0]} scale={[0.005, 0.005, 0.005]}>
+        <ThrusterEffect
+          count={100}
+          rootPosition={new Vector3(0, 0, 0)}
+          colors={['#003ba8', '#0154ef', '#4788ff', '#8fb6ff']}
+        />
+      </group>
+    );
+  }
+
   return (
     <group position={position}>
       <mesh name="corpus" position={[0, 0, 0]} castShadow receiveShadow>
@@ -237,6 +250,7 @@ function Sattelite(props: JSX.IntrinsicElements['mesh']) {
       {renderFrontRotationThrusters()}
       {renderBackRotationThrusters()}
       <Thruster />
+      {renderThrusterAnimation()}
     </group>
   );
 }

@@ -15,9 +15,11 @@ function Lights() {
       <ambientLight color={0xdddddd} />
       {/* <pointLight
         ref={pointLight}
-        position={[3, 3, 2]}
+        position={[0, 0, -2]}
         castShadow={true}
         receiveShadow={true}
+        color={'blue'}
+        intensity={100}
       /> */}
       <directionalLight
         ref={directionalLight}

@@ -34,8 +34,6 @@ export default function Thruster(props: JSX.IntrinsicElements['mesh']) {
         //@ts-ignore
         aParticle.position.z += 0.5 * aParticle.velocity;
       });
-    } else {
-      console.log('no particles to render');
     }
   });
 
@@ -52,7 +50,7 @@ export default function Thruster(props: JSX.IntrinsicElements['mesh']) {
         // better deviation with sqrt -> but thruster should have more particles in the center
         //   const r = CLOUD_RADIUS * Math.sqrt(Math.random());
         const r = CLOUD_RADIUS * Math.random();
-        const theta = (Math.random() + 200) * 2 * Math.PI;
+        const theta = Math.random() * 2 * Math.PI;
         const x = r * Math.cos(theta);
         const y = r * Math.sin(theta);
 
@@ -86,7 +84,7 @@ export default function Thruster(props: JSX.IntrinsicElements['mesh']) {
         <meshStandardMaterial attach="material" color={'blue'} wireframe />
       </Circle>
 
-      {renderParticles()}
+      {/* {renderParticles()} */}
     </>
   );
 }

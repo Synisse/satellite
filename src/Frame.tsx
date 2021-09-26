@@ -1,5 +1,6 @@
 import {Stars, Stats} from '@react-three/drei';
 import {Canvas, extend} from '@react-three/fiber';
+import {Vector3} from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import Box from './Box';
 import CameraControls from './CameraControls';
@@ -16,17 +17,16 @@ function Frame() {
   return (
     <Canvas data-testid="mainframe" shadows={true} onCreated={(state) => state.gl.setClearColor('black')}>
       <fog attach="fog" args={['white', 0, 400]} />
-      <Postprocessing />
+      {/* <Postprocessing /> */}
       <Stats />
       <CameraControls />
       <Stars />
       <Lights />
       {/* <Box position={[-3, 0, 0]} castShadow={true} receiveShadow={true} />
       <Box position={[3, 0, 0]} castShadow={true} receiveShadow={true} /> */}
-      <Sattelite position={[0, 1, 0]} />
+      <Sattelite position={[0, 0, 0]} />
       <Ground position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]} castShadow={true} receiveShadow={true} />
-      {/* <Thrusters /> */}
-      <ThrusterEffect count={1} mouse={{x: 5, y: 5}} colors={['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue']} />
+      <ThrusterEffect count={100} rootPosition={new Vector3(0, 0, 0)} colors={['#003ba8', '#0154ef', '#4788ff', '#8fb6ff']} />
     </Canvas>
   );
 }
