@@ -2,18 +2,18 @@ import {useRef} from 'react';
 import {extend, useFrame, useThree} from '@react-three/fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
-extend({ OrbitControls });
+extend({OrbitControls});
 
 function CameraControls() {
-    const {
-        camera,
-        gl: { domElement },
-      } = useThree();
+  const {
+    camera,
+    gl: {domElement},
+  } = useThree();
 
   const controls = useRef<OrbitControls>(null!);
-  useFrame(() => (controls.current.update()));
+  useFrame(() => controls.current.update());
   return (
-      //@ts-ignore
+    //@ts-ignore
     <orbitControls
       ref={controls}
       args={[camera, domElement]}
